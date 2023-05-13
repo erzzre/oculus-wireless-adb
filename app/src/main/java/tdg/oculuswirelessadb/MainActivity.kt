@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 if (switch!!.isChecked)
                 {
                     val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                    val clipData = ClipData.newPlainText("text", "adb connect 127.0.0.1:${textView!!.text.split(':').last()}")
+                    val clipData = ClipData.newPlainText("text", "adb devices&&adb connect 127.0.0.1:${textView!!.text.split(':').last()}&&adb tcpip 5555&&exit")
                     clipboardManager.setPrimaryClip(clipData)
 
                     val toast: Toast = Toast.makeText(this, "ADB connect command was copied to clipboard", Toast.LENGTH_LONG)
